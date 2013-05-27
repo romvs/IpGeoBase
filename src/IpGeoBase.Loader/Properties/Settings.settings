@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="IpGeoBase.Loader.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="IpGeoBaseUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://ipgeobase.ru/files/db/Main/geo_files.zip</Value>
+    </Setting>
+    <Setting Name="DeafultCulture" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ru-RU</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
