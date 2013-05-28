@@ -47,22 +47,39 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\Area.cs" />
+    <Compile Include="Domain\AreaRule.cs" />
+    <Compile Include="Domain\CountryRule.cs" />
     <Compile Include="Domain\IpGeoBaseContext.cs" />
     <Compile Include="Domain\Location.cs" />
+    <Compile Include="Domain\LocationRule.cs" />
     <Compile Include="Domain\Range.cs" />
     <Compile Include="Domain\Region.cs" />
+    <Compile Include="Domain\RegionRule.cs" />
+    <Compile Include="Domain\RuleBase.cs" />
+    <Compile Include="Domain\RuleKind.cs" />
+    <Compile Include="Domain\Target.cs" />
     <Compile Include="Migrations\201305270551219_Initial.cs" />
     <Compile Include="Migrations\201305270551219_Initial.Designer.cs">
       <DependentUpon>201305270551219_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201305281013349_AddedTargeting.cs" />
+    <Compile Include="Migrations\201305281013349_AddedTargeting.Designer.cs">
+      <DependentUpon>201305281013349_AddedTargeting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AreaRepository.cs" />
+    <Compile Include="Repositories\AreaRuleRepository.cs" />
+    <Compile Include="Repositories\CountryRuleRepository.cs" />
     <Compile Include="Repositories\LocationRepository.cs" />
+    <Compile Include="Repositories\LocationRuleRepository.cs" />
     <Compile Include="Repositories\RangeRepository.cs" />
     <Compile Include="Repositories\RegionRepository.cs" />
+    <Compile Include="Repositories\RegionRuleRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
+    <Compile Include="Repositories\TargetRepository.cs" />
     <Compile Include="Services\LoadService.cs" />
+    <Compile Include="Services\TargetService.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

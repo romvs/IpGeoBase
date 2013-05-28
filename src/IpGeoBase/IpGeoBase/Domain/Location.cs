@@ -43,7 +43,7 @@ namespace IpGeoBase.Domain
         public Decimal Longitude { get; set; }
 
         /// <summary>
-        /// Навигационное свойство для округа
+        /// Навигационное свойство для региона
         /// </summary>
         public virtual Region Region { get; set; }
 
@@ -51,6 +51,11 @@ namespace IpGeoBase.Domain
         /// Навигационное свойство для диапазонов ip-адресов
         /// </summary>
         public virtual ICollection<Range> Ranges { get; set; }
-    
+
+        /// <summary>
+        /// Навигационное свойство для правил выбора
+        /// </summary>
+        public virtual ICollection<LocationRule> Rules { get; set; }
+
     }
 }

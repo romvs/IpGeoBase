@@ -18,6 +18,7 @@ namespace IpGeoBase.Repositories
         public IpGeoBaseContext DataContext
         {
             get { return _dataContext; }
+            internal set { _dataContext = value; }
         }
 
         public RepositoryBase(IpGeoBaseContext dataContext)
@@ -36,7 +37,7 @@ namespace IpGeoBase.Repositories
         /// Сохраняет новую сущность в базе данных
         /// </summary>
         /// <param name="entity">Сохраняемая сущность</param>
-        public void Create(T entity)
+        public virtual void Create(T entity)
         {
             GetDbSet().Add(entity);
             DataContext.SaveChanges();
@@ -46,9 +47,19 @@ namespace IpGeoBase.Repositories
         /// Сохраняет сущность в базе данных
         /// </summary>
         /// <param name="entity">Сохраняемая сущность</param>
-        public void Save(T entity)
+        public virtual void Save(T entity)
         {
             DataContext.Entry(entity).State = EntityState.Modified;
+            DataContext.SaveChanges();
+        }
+
+        /// <summary>
+        /// Удаляет сущность из базы данных
+        /// </summary>
+        /// <param name="newsitem">Удаляемая сущность</param>
+        public void Delete(T entity)
+        {
+            DataContext.Entry(entity).State = EntityState.Deleted;
             DataContext.SaveChanges();
         }
 

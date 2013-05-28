@@ -33,9 +33,14 @@ namespace IpGeoBase.Domain
         public virtual Area Area { get; set; }
 
         /// <summary>
-        /// Навигационное свойство для регионов
+        /// Навигационное свойство для локаций
         /// </summary>
         public virtual ICollection<Location> Locations { get; set; }
+
+        /// <summary>
+        /// Навигационное свойство для правил выбора
+        /// </summary>
+        public virtual ICollection<RegionRule> Rules { get; set; }
 
     }
 }

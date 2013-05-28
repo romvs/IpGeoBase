@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Data.Entity;
 using System.Linq;
-using System.Text;
 using IpGeoBase.Domain;
-using System.Data.Entity;
 
 namespace IpGeoBase.Repositories
 {

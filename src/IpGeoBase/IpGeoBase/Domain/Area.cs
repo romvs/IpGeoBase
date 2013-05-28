@@ -26,5 +26,10 @@ namespace IpGeoBase.Domain
         /// </summary>
         public virtual ICollection<Region> Regions { get; set; }
 
+        /// <summary>
+        /// Навигационное свойство для правил выбора
+        /// </summary>
+        public virtual ICollection<AreaRule> Rules { get; set; }
+
     }
 }
