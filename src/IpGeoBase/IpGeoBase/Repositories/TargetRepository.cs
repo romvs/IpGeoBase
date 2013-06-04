@@ -38,6 +38,15 @@ namespace IpGeoBase.Repositories
         }
 
         /// <summary>
+        /// Возвращает полный список целей геолокации с включением данных по правилам отбора
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Target> FindAllWithRules()
+        {
+            return GetDbSet().Include("Rules").AsEnumerable();
+        }
+
+        /// <summary>
         /// Сохраняет новую сущность в базе данных
         /// </summary>
         /// <remarks>

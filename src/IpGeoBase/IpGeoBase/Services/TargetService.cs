@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using IpGeoBase.Domain;
 using IpGeoBase.Repositories;
 
@@ -73,6 +70,35 @@ namespace IpGeoBase.Services
         public TargetService()
             : this(new IpGeoBaseContext())
         {
+        }
+
+        /// <summary>
+        /// Создает или обновляет цель геолокации
+        /// </summary>
+        /// <param name="targetId">Идентификатор цели геолокации</param>
+        /// <param name="name">Наименование центра геолокации</param>
+        /// <returns></returns>
+        public Target CreateOrUpdateTarget(Guid targetId, string name)
+        {
+            Target target = TargetRepository.FindById(targetId);
+
+            if (target == null)
+            {
+                target = new Target()
+                {
+                    Id = targetId,
+                    Name = name
+                };
+
+                TargetRepository.Create(target);
+            }
+            else if (target.Name != name)
+            {
+                target.Name = name;
+                TargetRepository.Save(target);
+            }
+
+            return target;
         }
 
         /// <summary>

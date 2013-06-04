@@ -79,6 +79,7 @@
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\TargetRepository.cs" />
     <Compile Include="Services\LoadService.cs" />
+    <Compile Include="Services\Locator.cs" />
     <Compile Include="Services\TargetService.cs" />
   </ItemGroup>
   <ItemGroup />
