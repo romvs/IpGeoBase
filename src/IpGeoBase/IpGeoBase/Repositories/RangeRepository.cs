@@ -48,7 +48,8 @@ namespace IpGeoBase.Repositories
         /// <returns></returns>
         public Range FindForIp(string userHostAddress)
         {
-            long addr = IPAddress.HostToNetworkOrder(BitConverter.ToInt32(IPAddress.Parse(userHostAddress).GetAddressBytes(), 0));
+            byte[] bytes = IPAddress.Parse(userHostAddress).GetAddressBytes();
+            long addr = (long)((bytes[0] << 24) | (bytes[1] << 16) | (bytes[2] << 8) | (bytes[3]));//IPAddress.HostToNetworkOrder(BitConverter.ToUInt32(, 0));
             return GetDbSet().FirstOrDefault(range => (range.Start <= addr)
                                                    && (range.End >= addr));
         }
